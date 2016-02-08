@@ -14,36 +14,40 @@ function showSlide(id) {
 // Get random integers.
 // returns either 0 or 1
 function random() {
-		var cond = Math.floor(Math.random()*2);
+		var cond = Math.floor(Math.random()*3);
 		return cond;
 }
 
 // START
 var slideNum = 1;
+var cond = random();
 showSlide("instructions");
 
 var experiment = {
 
     // The object to be submitted.
-   data: {
-		 sent: [],
-		 rating: [],
-		 language: [],
-		 children:[],
-		 expt_aim: [],
-		 expt_gen: [],
-	},
+  data: {
+	 	sent: [],
+		rating: [],
+		language: [],
+		children:[],
+	 	expt_aim: [],
+		expt_gen: [],
+		},
 
 
 		next: function() {
 			// Allow experiment to start if it's a turk worker OR if it's a test run
 			//if (window.self == window.top | turk.workerId.length > 0)
 			slideNum = slideNum + 1;
-			if (slideNum == 2) {
-				showSlide("One");
+			if (slideNum == 2 && cond == 1) {
+				showSlide("no");
 			}
-			if (slideNum == 3) {
-				showSlide("Two");
+			if (slideNum == 2 && cond == 0) {
+				showSlide("weak");
+			}
+			if (slideNum == 2 && cond == 2) {
+				showSlide("strong");
 			}
 		},
 
