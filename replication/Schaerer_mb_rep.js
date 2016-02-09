@@ -27,14 +27,18 @@ var experiment = {
 
     // The object to be submitted.
   data: {
-	 	sent: [],
-		rating: [],
+	 	rating1: [],
+		rating2: [],
+		rating3: [],
 		first_offer: [],
-		children:[],
-	 	expt_aim: [],
-		expt_gen: [],
 		},
 
+	end: function() {
+	showSlide("finished");
+	setTimeout(function() {
+			turk.submit(experiment.data)
+	}, 1500);
+		},
 
 		next: function() {
 			// Allow experiment to start if it's a turk worker OR if it's a test run
@@ -59,25 +63,38 @@ var experiment = {
 		if (slideNum == 4) {
 			showSlide("scales");
 		}
+	},
+	// LOG RESPONSE
+log_response: function() {
+var response_logged = false;
+
+//Array of radio buttons
+var radio1 = document.getElementsByName("power");
+var radio2 = document.getElementsByName("power1");
+var radio3 = document.getElementsByName("power2");
+
+// Loop through radio buttons
+for (i = 0; i < radio1.length; i++) {
+		if (radio1[i].checked) {
+	experiment.data.rating1.push(radio1[i].value);
+	response_logged = true;
+		}
+}
+for (i = 0; i < radio2.length; i++) {
+		if (radio2[i].checked) {
+	experiment.data.rating2.push(radio2[i].value);
+	response_logged = true;
+		}
+}
+for (i = 0; i < radio3.length; i++) {
+		if (radio3[i].checked) {
+	experiment.data.rating3.push(radio3[i].value);
+	response_logged = true;
 		}
 }
 
-
-
-//log_response: function() {
-//var response_logged = false;
-
-
-//if (response_logged) {
-//	nextButton.blur();
-//}
-//
-//var cond = 1;
-//showSlide("1");
-//if cond == 1 {
-	//showSlide("instructions");
-//}
-
-//if cond == 0 {
-	//showSlide("0");
-//}
+if (response_logged) {
+		experiment.end();
+}
+	},
+}
