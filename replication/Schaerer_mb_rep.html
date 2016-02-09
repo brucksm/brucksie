@@ -90,13 +90,13 @@
     	<tr>
     	  <td>Strongly Disagree</td>
     	  <td> </td>
-    	  <td><input type="radio" name="judgment" value = "1">1</td>
-    	  <td><input type="radio" name="judgment" value = "2">2</td>
-    	  <td><input type="radio" name="judgment" value = "3">3</td>
-    	  <td><input type="radio" name="judgment" value = "4">4</td>
-    	  <td><input type="radio" name="judgment" value = "5">5</td>
-    	  <td><input type="radio" name="judgment" value = "6">6</td>
-    	  <td><input type="radio" name="judgment" value = "7">7</td>
+    	  <td><input type="radio" name="power" value = "1">1</td>
+    	  <td><input type="radio" name="power" value = "2">2</td>
+    	  <td><input type="radio" name="power" value = "3">3</td>
+    	  <td><input type="radio" name="power" value = "4">4</td>
+    	  <td><input type="radio" name="power" value = "5">5</td>
+    	  <td><input type="radio" name="power" value = "6">6</td>
+    	  <td><input type="radio" name="power" value = "7">7</td>
     	  <td>&nbsp;&nbsp;&nbsp;</td>
     	  <td>Strongly Agree</td>
     	</tr>
@@ -108,15 +108,15 @@
     <table align = "center"><tr>
     <td align="center">
     	<tr>
-    	  <td>Strongly Disagree</td>
+        <td>Strongly Disagree</td>
     	  <td> </td>
-    	  <td><input type="radio" name="judgment" value = "1">1</td>
-    	  <td><input type="radio" name="judgment" value = "2">2</td>
-    	  <td><input type="radio" name="judgment" value = "3">3</td>
-    	  <td><input type="radio" name="judgment" value = "4">4</td>
-    	  <td><input type="radio" name="judgment" value = "5">5</td>
-    	  <td><input type="radio" name="judgment" value = "6">6</td>
-    	  <td><input type="radio" name="judgment" value = "7">7</td>
+    	  <td><input type="radio" name="power1" value = "1">1</td>
+    	  <td><input type="radio" name="power1" value = "2">2</td>
+    	  <td><input type="radio" name="power1" value = "3">3</td>
+    	  <td><input type="radio" name="power1" value = "4">4</td>
+    	  <td><input type="radio" name="power1" value = "5">5</td>
+    	  <td><input type="radio" name="power1" value = "6">6</td>
+    	  <td><input type="radio" name="power1" value = "7">7</td>
     	  <td>&nbsp;&nbsp;&nbsp;</td>
     	  <td>Strongly Agree</td>
     	</tr>
@@ -127,21 +127,26 @@
     <table align = "center"><tr>
     <td align="center">
     	<tr>
-    	  <td>Strongly Disagree</td>
+        <td>Strongly Disagree</td>
     	  <td> </td>
-    	  <td><input type="radio" name="judgment" value = "1">1</td>
-    	  <td><input type="radio" name="judgment" value = "2">2</td>
-    	  <td><input type="radio" name="judgment" value = "3">3</td>
-    	  <td><input type="radio" name="judgment" value = "4">4</td>
-    	  <td><input type="radio" name="judgment" value = "5">5</td>
-    	  <td><input type="radio" name="judgment" value = "6">6</td>
-    	  <td><input type="radio" name="judgment" value = "7">7</td>
+    	  <td><input type="radio" name="power2" value = "1">1</td>
+    	  <td><input type="radio" name="power2" value = "2">2</td>
+    	  <td><input type="radio" name="power2" value = "3">3</td>
+    	  <td><input type="radio" name="power2" value = "4">4</td>
+    	  <td><input type="radio" name="power2" value = "5">5</td>
+    	  <td><input type="radio" name="power2" value = "6">6</td>
+    	  <td><input type="radio" name="power2" value = "7">7</td>
     	  <td>&nbsp;&nbsp;&nbsp;</td>
     	  <td>Strongly Agree</td>
     	</tr>
     </table>
   </p>
-<button type="button" onclick="this.blur(); experiment.next()">Next</button>
+<button type="button" onclick="this.blur(); experiment.log_response()">Next</button>
+</div>
+
+<!-- The finish slide. -->
+<div class="slide" id="finished">
+ You're finished - thanks for participating! Submitting to Mechanical Turk...
 </div>
 
 <script src="Schaerer_mb_rep.js"></script>
