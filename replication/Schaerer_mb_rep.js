@@ -29,7 +29,7 @@ var experiment = {
   data: {
 	 	sent: [],
 		rating: [],
-		language: [],
+		first_offer: [],
 		children:[],
 	 	expt_aim: [],
 		expt_gen: [],
@@ -49,8 +49,17 @@ var experiment = {
 			if (slideNum == 2 && cond == 2) {
 				showSlide("strong");
 			}
+			if (slideNum == 3) {
+				showSlide("first_offer");
+			}
 		},
-
+		submit_comments: function() {
+		slideNum = slideNum +1
+		experiment.data.first_offer.push(document.getElementById("fo").value);
+		if (slideNum == 4) {
+			showSlide("scales");
+		}
+		}
 }
 
 
