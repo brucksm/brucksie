@@ -70,6 +70,80 @@
 <button type="button" onclick="this.blur(); experiment.next()">Next</button>
 </div>
 
+<!-- Free form first offer -->
+<div class="slide" id="first_offer">
+  <p> What is your first offer? </p>
+   <form onsubmit="experiment.submitcomments()">
+   <p>
+  <input type="text" id="fo" name="firsto" style="width:40%" value=""></textarea>
+   </p>
+  </p>
+<button type="button" id="debriefsubmit" onClick="experiment.submit_comments()">Next</button>
+</div>
+
+<!-- Scales. -->
+<div class="slide" id="scales">
+  How powerful did you feel?
+  <p>
+    <table align = "center"><tr>
+    <td align="center">
+    	<tr>
+    	  <td>Strongly Disagree</td>
+    	  <td> </td>
+    	  <td><input type="radio" name="judgment" value = "1">1</td>
+    	  <td><input type="radio" name="judgment" value = "2">2</td>
+    	  <td><input type="radio" name="judgment" value = "3">3</td>
+    	  <td><input type="radio" name="judgment" value = "4">4</td>
+    	  <td><input type="radio" name="judgment" value = "5">5</td>
+    	  <td><input type="radio" name="judgment" value = "6">6</td>
+    	  <td><input type="radio" name="judgment" value = "7">7</td>
+    	  <td>&nbsp;&nbsp;&nbsp;</td>
+    	  <td>Strongly Agree</td>
+    	</tr>
+    </table>
+  </p>
+
+  How other thing did you feel?
+  <p>
+    <table align = "center"><tr>
+    <td align="center">
+    	<tr>
+    	  <td>Strongly Disagree</td>
+    	  <td> </td>
+    	  <td><input type="radio" name="judgment" value = "1">1</td>
+    	  <td><input type="radio" name="judgment" value = "2">2</td>
+    	  <td><input type="radio" name="judgment" value = "3">3</td>
+    	  <td><input type="radio" name="judgment" value = "4">4</td>
+    	  <td><input type="radio" name="judgment" value = "5">5</td>
+    	  <td><input type="radio" name="judgment" value = "6">6</td>
+    	  <td><input type="radio" name="judgment" value = "7">7</td>
+    	  <td>&nbsp;&nbsp;&nbsp;</td>
+    	  <td>Strongly Agree</td>
+    	</tr>
+    </table>
+  </p>
+  How last thing did you feel?
+  <p>
+    <table align = "center"><tr>
+    <td align="center">
+    	<tr>
+    	  <td>Strongly Disagree</td>
+    	  <td> </td>
+    	  <td><input type="radio" name="judgment" value = "1">1</td>
+    	  <td><input type="radio" name="judgment" value = "2">2</td>
+    	  <td><input type="radio" name="judgment" value = "3">3</td>
+    	  <td><input type="radio" name="judgment" value = "4">4</td>
+    	  <td><input type="radio" name="judgment" value = "5">5</td>
+    	  <td><input type="radio" name="judgment" value = "6">6</td>
+    	  <td><input type="radio" name="judgment" value = "7">7</td>
+    	  <td>&nbsp;&nbsp;&nbsp;</td>
+    	  <td>Strongly Agree</td>
+    	</tr>
+    </table>
+  </p>
+<button type="button" onclick="this.blur(); experiment.next()">Next</button>
+</div>
+
 <script src="Schaerer_mb_rep.js"></script>
 
 </body>
