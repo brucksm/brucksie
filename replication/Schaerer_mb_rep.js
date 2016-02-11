@@ -41,6 +41,7 @@ var experiment = {
 		},
 
 		next: function() {
+			if (window.self == window.top | turk.workerId.length > 0) {
 			// Allow experiment to start if it's a turk worker OR if it's a test run
 			//if (window.self == window.top | turk.workerId.length > 0)
 			slideNum = slideNum + 1;
@@ -56,17 +57,26 @@ var experiment = {
 			if (slideNum == 3) {
 				showSlide("first_offer");
 			}
+		}
 		},
 		submit_comments: function() {
-		slideNum = slideNum +1
-		experiment.data.first_offer.push(document.getElementById("fo").value);
-		if (slideNum == 4) {
+    var x = document.forms["myForm"]["fname"].value;
+    if (x == null || x == "") {
+			$("#testMessage").html('<font color="red">' +
+					 'Please make a response!' +
+					 '</font>');
+    }
+		else{
+		experiment.data.first_offer.push(document.forms["myForm"]["fname"].value);
 			showSlide("scales");
+			
 		}
-	},
+		},
 	// LOG RESPONSE
 log_response: function() {
 var response_logged = false;
+var response_logged1 = false;
+var response_logged2 = false;
 
 //Array of radio buttons
 var radio1 = document.getElementsByName("power");
@@ -83,18 +93,23 @@ for (i = 0; i < radio1.length; i++) {
 for (i = 0; i < radio2.length; i++) {
 		if (radio2[i].checked) {
 	experiment.data.rating2.push(radio2[i].value);
-	response_logged = true;
+	response_logged1 = true;
 		}
 }
 for (i = 0; i < radio3.length; i++) {
 		if (radio3[i].checked) {
 	experiment.data.rating3.push(radio3[i].value);
-	response_logged = true;
+	response_logged2 = true;
 		}
 }
 
-if (response_logged) {
+if (response_logged && response_logged1 && response_logged2) {
 		experiment.end();
+}
+else{
+	$("#testMessage1").html('<font color="red">' +
+			 'Please make a response!' +
+			 '</font>');
 }
 	},
 }
