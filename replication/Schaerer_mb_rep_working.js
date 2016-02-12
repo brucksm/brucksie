@@ -63,13 +63,14 @@ var experiment = {
     var x = document.forms["myForm"]["fname"].value;
     if (x == null || x == "") {
 			$("#testMessage").html('<font color="red">' +
-					 'Please make a response!' +
+					 'Please make a numeric response!' +
 					 '</font>');
     }
 		else{
 		experiment.data.first_offer.push(document.forms["myForm"]["fname"].value);
 			showSlide("scales");
-			
+			$("#testMessage").html('');
+
 		}
 		},
 	// LOG RESPONSE
@@ -107,7 +108,7 @@ if (response_logged && response_logged1 && response_logged2) {
 		experiment.end();
 }
 else{
-	$("#testMessage1").html('<font color="red">' +
+	$("#testMessage").html('<font color="red">' +
 			 'Please make a response!' +
 			 '</font>');
 }

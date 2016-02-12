@@ -73,13 +73,15 @@
 <!-- Free form first offer -->
 <div class="slide" id="first_offer">
   <p> What is your first offer? </p>
-   <form onsubmit="experiment.submitcomments()">
-   <p>
-  <input type="text" id="fo" name="firsto" style="width:40%" value=""></textarea>
-   </p>
-  </p>
-<button type="button" id="debriefsubmit" onClick="experiment.submit_comments()">Next</button>
-</div>
+  <form name="myForm"
+  onsubmit="experiment.submit_comments()" method="post">
+  MY first offer is (in US$): <input type="number" step="0.01" name="fname">
+  <button type="button" id="debriefsubmit" onClick="experiment.submit_comments()">Next</button>
+  </div>
+  </td>
+  <tr><td align="center">
+  <div id="testMessage"> </div>
+  </td></tr>
 
 <!-- Scales. -->
 <div class="slide" id="scales">
@@ -141,15 +143,25 @@
     	</tr>
     </table>
   </p>
-<button type="button" onclick="this.blur(); experiment.log_response()">Next</button>
-</div>
+  <table align="center"><tr>
+  <td align="center">
+	<button type="button" id="nextButton" onClick="experiment.log_response()"> next</button>
+         </td>
+      <tr><td align="center">
+      <div id="testMessage"> </div>
+      </td></tr>
+
+ </table>
+ </div>
+
+
 
 <!-- The finish slide. -->
 <div class="slide" id="finished">
  You're finished - thanks for participating! Submitting to Mechanical Turk...
 </div>
 
-<script src="Schaerer_mb_rep.js"></script>
+<script src="Schaerer_mb_rep_working.js"></script>
 
 </body>
 </html>
