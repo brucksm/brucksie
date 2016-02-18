@@ -41,6 +41,7 @@ var experiment = {
 			turk.submit(experiment.data)
 	}, 1500);
 		},
+
  	show_ins: function() {
 			if (cond==0){
 				$("#condMessage").html('<font>' +
@@ -79,6 +80,7 @@ var experiment = {
 				'</font>');
 			}
 		},
+
 		next: function() {
 			if (window.self == window.top | turk.workerId.length > 0) {
 				// Allow experiment to start if it's a turk worker OR if it's a test run
@@ -89,27 +91,41 @@ var experiment = {
 					experiment.show_ins();
 				}
 				if (slideNum == 3) {
-				showSlide("first_offer");
-				experiment.show_ins();
+					showSlide("first_offer");
+					experiment.show_ins();
 				}
-				if (slideNum == 4) {
-				showSlide("AC");
+					if (slideNum == 4) {
+						showSlide("AC");
 				}
 			}
 		},
 
 		submit_comments: function() {
     	var x = document.forms["myForm"]["fname"].value;
-    	if (x == null || x == "") {
-				$("#testMessage").html('<font color="red">' +
-					 'Please make a response!' +
-					 '</font>');
-    	}
-			else{
+    	if (x != "" && x != null) {
 				experiment.data.first_offer.push(x);
 				showSlide("scales");
 				$("#testMessage").html('');
+    	}
+			else{
+				$("#testMessage").html('<font color="red">' +
+					 'Please make a response!' +
+					 '</font>');
 			}
+		},
+		submit_comments2: function() {
+			experiment.end();
+    	//var x = document.forms["myForm"]["fname"].value;
+    //	if (x == null || x == "") {
+				//$("#testMessage").html('<font color="red">' +
+				//	 'Please make a response!' +
+					// '</font>');
+    	//}
+			//else{
+			//	experiment.data.first_offer.push(x);
+				//showSlide("scales");
+				//$("#testMessage").html('');
+			//}
 		},
 	// LOG RESPONSE
 		log_response2: function() {
@@ -132,7 +148,7 @@ var experiment = {
 			else {
 				experiment.data.AC.push("fail");
 			}
-			experiment.end();
+			showSlide("demos");
 		},
 
 		log_response: function() {
