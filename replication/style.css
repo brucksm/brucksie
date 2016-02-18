@@ -112,3 +112,9 @@ td {
 #sent_question {
 	font-size: 16px;
 }
+
+.checkbox-grid li {
+    display: block;
+    float: left;
+    width: 50%;
+}
